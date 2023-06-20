@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <!-- HTML Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charlie Bailey | AWS Certified SAA</title>
+  <meta name="description" content="AWS Certified Cloud Engineer">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://digitalden.cloud/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Deniz Yilmaz | Cloud Engineer">
+  <!--<meta property="og:description" content="Cloud Engineer">-->
+  <meta property="og:image" content="https://s3.eu-west-2.amazonaws.com/digitalden.cloud/resources/images/digitalden-og.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="digitalden.cloud">
+  <meta property="twitter:url" content="https://digitalden.cloud/">
+  <meta name="twitter:title" content="Deniz Yilmaz | Cloud Engineer">
+  <!-- <meta name="twitter:description" content="Cloud Engineer">-->
+  <meta name="twitter:image" content="https://s3.eu-west-2.amazonaws.com/digitalden.cloud/resources/images/digitalden-og.png">
+    
+  <!-- Font Awesome 5.15.1 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <!-- CSS Style Sheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="updateCounter()">
+  <div class="overlay"></div>
+
+  <!-- Star Background -->
+  <div class="stars" aria-hidden="true"></div>
+  <div class="starts2" aria-hidden="true"></div>
+  <div class="stars3" aria-hidden="true"></div>
+
+<!-- Main Content -->
+<main class="main">
+  <section class="contact">
+    <div class="header">
+      <img src="myface.png" alt="Portrait of Chaz">
+      <h1 class="title">Charlie Bailey</h1>
+    </div>
+    <h2 class="sub-title">AWS Certified SAA</h2>
+    
+    <div class="wrapper">
+      <a href="https://www.linkedin.com/in/charlienbailey/" class="icon linkedin" target="_blank">
+        <div class="tooltip">LinkedIn</div>
+        <span><i class="fab fa-linkedin"></i></span>
+      </a>
+      
+      <a href="https://github.com/CharlieNBailey" class="icon github" target="_blank">
+        <div class="tooltip">Github</div>
+        <span><i class="fab fa-github"></i></span>
+      </a>
+      
+      <a href="https://www.credly.com/users/charlienbailey/badges" class="icon aws" target="_blank">
+        <div class="tooltip">Certs</div>
+        <span><i class="fab fa-aws"></i></span>
+      </a>
+
+      <a href="https://www.youtube.com/playlist?list=PLkaHvfqKA2ebWjimZG3GHeTrfSIpgC5ch" class="icon youtube" target="_blank">
+        <div class="tooltip">Learning</div>
+        <span><i class="fab fa-youtube"></i></span>
+      </a>
+
+      <!--<a href="https://blog.digitalden.cloud/" class="icon medium" target="_blank">
+        <div class="tooltip">Blog</div>
+        <span><i class="fab fa-medium"></i></span>
+      </a>-->
+      
+      <a href="http://charlienbailey.click" class="icon CV" target="_blank">
+        <div class="tooltip">CV (under maintenance)</div>
+        <span><i class="fas fa-file"></i></span>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+  <footer class="footer">
+    <div style="text-align: center;">
+      <span style="font-size: 20px;">Visits: <span id="hits"></span></span>
+    </div>
+    <div class="aws-logo">
+      <img src="AWSLogo.png" alt="AWS Logo" style="width: 80px; height: auto;">
+    </div>
+  </footer>
+
+  <!-- Update Counter JS -->
+  <script type = "text/javascript">
+    var apiUrl = "https://0qrguua9jg.execute-api.eu-west-2.amazonaws.com/Prod/put";
+      fetch(apiUrl)
+      .then(() => fetch("https://0qrguua9jg.execute-api.eu-west-2.amazonaws.com/Prod/get"))
+      .then(response => response.json())
+      .then(data =>{
+          document.getElementById('hits').innerHTML = data
+    console.log(data)});
+  </script>
+
+</body>
+</html>
